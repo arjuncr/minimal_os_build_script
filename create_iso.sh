@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. ./env.sh
+./env.sh
 
 set -ex
 
