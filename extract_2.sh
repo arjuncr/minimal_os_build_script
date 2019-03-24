@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./env.sh
+. ./env.sh
 
 tar -xvf kernel.tar.xz
 tar -xvf busybox.tar.bz2
