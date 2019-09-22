@@ -13,5 +13,5 @@ jobs:
       run: echo Hello, world!
     - name: Run a multi-line script
       run: |
-        sudo apt install bison flex libelf-dev libelf-devel
+        sudo apt install bison flex libelf-dev elfutils-libelf-devel
         ./build_linux.sh
