@@ -11,6 +11,18 @@ jobs:
     - uses: actions/checkout@v1
     - name: Install build dep
       run: sudo apt install bison flex libelf-dev
-    - name: Run Script to Create Minimal x86_64 iso
+    - name: Running Script to Create Minimal x86_64 iso
       run: |
         ./build_linux.sh
+    
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        # A file, directory or wildcard pattern that describes what to upload
+         path: /home/runner/work/minimal_os_build_script/minimal_os_build_script/output
+         
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v2
+      with:
+        # Destination path
+        path:  /home/runner/work/minimal_os_build_script/minimal_os_build_script/tmp
