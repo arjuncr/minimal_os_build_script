@@ -2,4 +2,5 @@
 
 . ./env.sh
 
-mkdir isoimage
+mkdir image
+mkdir output
