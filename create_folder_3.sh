@@ -4,3 +4,4 @@
 
 mkdir image
 mkdir output
+mkdir tmp
