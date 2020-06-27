@@ -18,19 +18,19 @@ echo 'mount -t proc none /proc' >> init
 echo 'mount -t sysfs none /sys' >> init
 echo 'setsid cttyhack /bin/sh' >> init
 chmod +x init
-find . | cpio -R root:root -H newc -o | gzip > ../../isoimage/rootfs.gz
+find . | cpio -R root:root -H newc -o | gzip > ../../image/rootfs.gz
 
 cd ../../linux-$KERNEL_VERSION
 make mrproper defconfig bzImage
-cp arch/x86/boot/bzImage ../isoimage/kernel.gz
-cd ../isoimage
+cp arch/x86/boot/bzImage ../image/kernel.gz
+cd ../image
 cp ../syslinux-$SYSLINUX_VERSION/bios/core/isolinux.bin .
 cp ../syslinux-$SYSLINUX_VERSION/bios/com32/elflink/ldlinux/ldlinux.c32 .
 echo 'default kernel.gz initrd=rootfs.gz' > ./isolinux.cfg
 
 xorriso \
   -as mkisofs \
-  -o ../linux.iso \
+  -o ../output/linux_minimal.iso \
   -b isolinux.bin \
   -c boot.cat \
   -no-emul-boot \
