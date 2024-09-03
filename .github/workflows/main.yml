@@ -22,7 +22,7 @@ jobs:
          path: /home/runner/work/minimal_os_build_script/minimal_os_build_script/output
          
     - name: Download a Build Artifact
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         # Destination path
         path:  /home/runner/work/minimal_os_build_script/minimal_os_build_script/tmp
